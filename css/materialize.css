@@ -6144,7 +6144,7 @@ nav ul li {
   transition: background-color 0.3s;
 }
 nav ul li:hover, nav ul li.active {
-  background-color: #ea454b;
+  background-color: #ffab00;
 }
 nav ul a {
   font-size: 1rem;

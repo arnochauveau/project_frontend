@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Bieren</title>
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <nav class="amber">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><img  src="img/beerlogo_03.png"/></a>
+            <ul id="nav-mobile" class="right side-nav">
+                <li><a href="#map">Map</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#credits">Credits</a></li>
+            </ul>
+            <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+        </div>
+    </nav>
+
+    <div class="parallax-container">
+        <div class="parallax">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20159.83219230068!2d3.2553670999999995!3d50.831552450000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbe!4v1417519025972" width="800" height="600" frameborder="0" style="border:0"></iframe>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+        $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
+    </script>
+</body>
+</html>
