@@ -1,35 +1,78 @@
-<!DOCTYPE html>
+
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
+<head >
+
     <title>Bieren</title>
-    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvvKp1bEZ78wCeNR0dwCM5D6IGoEF_Pp8"></script>
+    <link href="css/materialize.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+
+
+    <script> var initialize =  function() {
+        var mapOptions = {
+            center: { lat: 50.85, lng: 4.35},
+            zoom: 8,
+            disableDefaultUI: true,
+            mapTypeId: google.maps.MapTypeId.ROADS
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapOptions);
+    }
+
+
+    </script>
 </head>
-<body>
-    <nav class="amber">
+<body >
+<nav class="amber">
+    <div class="container">
         <div class="nav-wrapper">
             <a href="#" class="brand-logo"><img  src="img/beerlogo_03.png"/></a>
             <ul id="nav-mobile" class="right side-nav">
                 <li><a href="#map">Map</a></li>
-                <li><a href="#about">about</a></li>
+                <li><a href="#About">About</a></li>
                 <li><a href="#credits">Credits</a></li>
             </ul>
             <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <div class="parallax-container">
-        <div class="parallax">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20159.83219230068!2d3.2553670999999995!3d50.831552450000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbe!4v1417519025972" width="800" height="600" frameborder="0" style="border:0"></iframe>
+<div class="parallax-container-map">
+    <div  class="parallax-map">
+        <div id="map-canvas"></div>
+    </div>
+</div>
+<div class="section white">
+    <div class="row container">
+        <h2>Select a pin for more information</h2>
+        <a href="" class="btn-floating amber accent-4"><i class="mdi-action-search"></i></a>
+    </div>
+    <div class="row container">
+        <div class="col m3 s12">
+            <div class="card-panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque posuere magna et dapibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean scelerisque erat nec orci consequat laoreet. Nam suscipit feugiat eros, at hendrerit nibh semper at. Maecenas gravida lacus vitae ex scelerisque, non eleifend nunc condimentum. Etiam auctor dapibus metus, et dignissim risus interdum sit amet. Ut vestibulum laoreet tempor. Fusce neque dolor, hendrerit in vestibulum et, varius convallis lacus. Praesent ac suscipit libero. Aenean volutpat id ipsum eget tincidunt. Vestibulum id lacinia nisl. </div>
+        </div>
+        <div class="col m3 s12">
+            <div class="card-panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque posuere magna et dapibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean scelerisque erat nec orci consequat laoreet. Nam suscipit feugiat eros, at hendrerit nibh semper at. Maecenas gravida lacus vitae ex scelerisque, non eleifend nunc condimentum. Etiam auctor dapibus metus, et dignissim risus interdum sit amet. Ut vestibulum laoreet tempor. Fusce neque dolor, hendrerit in vestibulum et, varius convallis lacus. Praesent ac suscipit libero. Aenean volutpat id ipsum eget tincidunt. Vestibulum id lacinia nisl. </div>
+        </div>
+        <div class="col m3 s12">
+            <div class="card-panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque posuere magna et dapibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean scelerisque erat nec orci consequat laoreet. Nam suscipit feugiat eros, at hendrerit nibh semper at. Maecenas gravida lacus vitae ex scelerisque, non eleifend nunc condimentum. Etiam auctor dapibus metus, et dignissim risus interdum sit amet. Ut vestibulum laoreet tempor. Fusce neque dolor, hendrerit in vestibulum et, varius convallis lacus. Praesent ac suscipit libero. Aenean volutpat id ipsum eget tincidunt. Vestibulum id lacinia nisl. </div>
+        </div>
+        <div class="col m3 s12">
+            <div class="card-panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque posuere magna et dapibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean scelerisque erat nec orci consequat laoreet. Nam suscipit feugiat eros, at hendrerit nibh semper at. Maecenas gravida lacus vitae ex scelerisque, non eleifend nunc condimentum. Etiam auctor dapibus metus, et dignissim risus interdum sit amet. Ut vestibulum laoreet tempor. Fusce neque dolor, hendrerit in vestibulum et, varius convallis lacus. Praesent ac suscipit libero. Aenean volutpat id ipsum eget tincidunt. Vestibulum id lacinia nisl. </div>
         </div>
     </div>
+</div>
 
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script>
-        $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
-    </script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
+
+
+<script>
+    initialize();
+    $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
+    $('.parallax').parallax();
+
+</script>
 </body>
 </html>

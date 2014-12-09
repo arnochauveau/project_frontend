@@ -563,7 +563,7 @@ jQuery.extend( jQuery.easing,
         function updateParallax(initial) {
           if (window_width > 992) {
             var container_height = $this.height();
-            var img_height = $this.children("img").height();
+            var img_height = $this.children("div").height();
             var parallax_dist = img_height - container_height;
             var bottom = $this.offset().top + container_height;
             var top = $this.offset().top;
@@ -574,15 +574,15 @@ jQuery.extend( jQuery.easing,
             var parallax = -1 * parallax_dist * percentScrolled;      
 
             if ((bottom > scrollTop) && (top < (scrollTop + windowHeight))) { 
-              $this.children("img").first().css('bottom', parallax + "px");
+              $this.children("div").first().css('bottom', parallax + "px");
             }
             if (initial) {
-              $this.children("img").first().show();
+              $this.children("div").first().show();
             }
 
           }
           else {
-            $this.children("img").show();
+            $this.children("div").show();
           }
         }
         updateParallax(true);
