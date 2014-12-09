@@ -1,5 +1,4 @@
-
-<html>
+<html ng-app>
 <head >
 
     <title>Bieren</title>
@@ -22,7 +21,7 @@
 
     </script>
 </head>
-<body >
+<body ng-controller="breweryController">
 <nav class="amber">
     <div class="container">
         <div class="nav-wrapper">
@@ -44,30 +43,34 @@
 </div>
 <div class="section white">
     <div class="row container">
-        <h2>Select a pin for more information</h2>
-        <a href="" class="btn-floating amber accent-4"><i class="mdi-action-search"></i></a>
+        <h2>Select a pin for more information <a href="" class="btn-floating amber accent-4"><i class="mdi-content-filter-list"></i></a>  <a href="" class="btn-floating amber accent-4"><i class="mdi-content-add"></i></a></h2>
+
+
     </div>
     <div class="row container">
-        <div class="col m3 s12">
-            <div class="card-panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque posuere magna et dapibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean scelerisque erat nec orci consequat laoreet. Nam suscipit feugiat eros, at hendrerit nibh semper at. Maecenas gravida lacus vitae ex scelerisque, non eleifend nunc condimentum. Etiam auctor dapibus metus, et dignissim risus interdum sit amet. Ut vestibulum laoreet tempor. Fusce neque dolor, hendrerit in vestibulum et, varius convallis lacus. Praesent ac suscipit libero. Aenean volutpat id ipsum eget tincidunt. Vestibulum id lacinia nisl. </div>
-        </div>
-        <div class="col m3 s12">
-            <div class="card-panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque posuere magna et dapibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean scelerisque erat nec orci consequat laoreet. Nam suscipit feugiat eros, at hendrerit nibh semper at. Maecenas gravida lacus vitae ex scelerisque, non eleifend nunc condimentum. Etiam auctor dapibus metus, et dignissim risus interdum sit amet. Ut vestibulum laoreet tempor. Fusce neque dolor, hendrerit in vestibulum et, varius convallis lacus. Praesent ac suscipit libero. Aenean volutpat id ipsum eget tincidunt. Vestibulum id lacinia nisl. </div>
-        </div>
-        <div class="col m3 s12">
-            <div class="card-panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque posuere magna et dapibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean scelerisque erat nec orci consequat laoreet. Nam suscipit feugiat eros, at hendrerit nibh semper at. Maecenas gravida lacus vitae ex scelerisque, non eleifend nunc condimentum. Etiam auctor dapibus metus, et dignissim risus interdum sit amet. Ut vestibulum laoreet tempor. Fusce neque dolor, hendrerit in vestibulum et, varius convallis lacus. Praesent ac suscipit libero. Aenean volutpat id ipsum eget tincidunt. Vestibulum id lacinia nisl. </div>
-        </div>
-        <div class="col m3 s12">
-            <div class="card-panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque posuere magna et dapibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean scelerisque erat nec orci consequat laoreet. Nam suscipit feugiat eros, at hendrerit nibh semper at. Maecenas gravida lacus vitae ex scelerisque, non eleifend nunc condimentum. Etiam auctor dapibus metus, et dignissim risus interdum sit amet. Ut vestibulum laoreet tempor. Fusce neque dolor, hendrerit in vestibulum et, varius convallis lacus. Praesent ac suscipit libero. Aenean volutpat id ipsum eget tincidunt. Vestibulum id lacinia nisl. </div>
+        <div class="col m3 s12" ng-repeat="b in breweryData">
+            <div class="card-panel">
+                <span class="card-title">{{b.brewery.name}}</span>
+                <div class="card-content">
+                    <p>{{b.streetAddress + ", " + b.locality}}</p>
+                </div>
+                <div class="card-action">
+                 <a href="{{b.website}}">visit website</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/breweryController.js"></script>
+
+
 <script type="text/javascript" src="js/materialize.js"></script>
 
-
+<script type="text/javascript" src="js/app.js"></script>
 <script>
     initialize();
     $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
