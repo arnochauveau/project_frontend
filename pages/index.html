@@ -1,0 +1,83 @@
+<html ng-app>
+<head >
+
+    <title>Beers-Map</title>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvvKp1bEZ78wCeNR0dwCM5D6IGoEF_Pp8"></script>
+    <link href="../css/materialize.css" type="text/css" rel="stylesheet">
+    <link href="../css/style.css" type="text/css" rel="stylesheet">
+
+
+    <script> var initialize =  function() {
+        var mapOptions = {
+            center: { lat: 50.85, lng: 4.35},
+            zoom: 8,
+            disableDefaultUI: true,
+            mapTypeId: google.maps.MapTypeId.ROADS
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapOptions);
+    }
+
+
+    </script>
+</head>
+<body ng-controller="breweryController">
+<nav class="amber">
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><img  src="../img/beerlogo_03.png"/></a>
+            <ul id="nav-mobile" class="right side-nav">
+                <li><a href="/">Map</a></li>
+                <li><a href="/chat">Chat</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#credits">Credits</a></li>
+
+            </ul>
+            <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+        </div>
+    </div>
+</nav>
+
+<div class="parallax-container-map">
+    <div  class="parallax-map">
+        <div id="map-canvas"></div>
+    </div>
+</div>
+<div class="section white">
+    <div class="row container">
+        <h2>Select a pin for more information <a href="" class="btn-floating amber accent-4"><i class="mdi-content-filter-list"></i></a>  <a href="" class="btn-floating amber accent-4"><i class="mdi-content-add"></i></a></h2>
+
+
+    </div>
+    <div class="row container">
+        <div class="col m3 s12" ng-repeat="b in breweryData">
+            <div class="card-panel brouwerijcard">
+                <span class="card-title">{{b.brewery.name}}</span>
+                <div class="card-content">
+                    <p>{{b.streetAddress + ", " + b.locality}}</p>
+                </div>
+                <div class="card-action">
+                 <a href="{{b.website}}">visit website</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="../js/angular.js"></script>
+<script src="../js/breweryController.js"></script>
+
+
+<script type="text/javascript" src="../js/materialize.js"></script>
+
+<script type="text/javascript" src="../js/app.js"></script>
+<script>
+    initialize();
+    $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
+    $('.parallax').parallax();
+
+</script>
+</body>
+</html>

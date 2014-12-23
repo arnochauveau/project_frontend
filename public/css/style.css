@@ -1,0 +1,40 @@
+.brand-logo > img{
+    height: 50px;
+    width: auto;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.parallax-container-map{
+    height: 80%;
+}
+
+.parallax-map > div{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+#map-canvas{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+.brouwerijcard {
+    min-height: 148px;
+}
+#chatcontent{
+    height: 70%;
+
+}
+#send-message{
+    height: 20%;
+
+}
+#userlist{
+    height:90%;
+}
+.hidden{
+    visibility: hidden;
+}
+

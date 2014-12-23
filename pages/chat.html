@@ -1,0 +1,130 @@
+<html>
+<head>
+    <title>Beers-Chat</title>
+    <link href="../css/materialize.css" type="text/css" rel="stylesheet">
+    <link href="../css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<nav class="amber">
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><img  src="../img/beerlogo_03.png"/></a>
+            <ul id="nav-mobile" class="right side-nav">
+                <li><a href="/">Map</a></li>
+                <li><a href="/chat">Chat</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#credits">Credits</a></li>
+
+            </ul>
+            <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+        </div>
+    </div>
+</nav>
+<div id="new-user" class="modal">
+    <form id="new-user-form">
+        <p>Enter a username:</p>
+        <input id="chosen-username" placeholder="e.g. FancyUsername123" type="text" required/>
+        <blockquote id="errortext"></blockquote>
+        <button class="btn waves-effect waves-light amber accent-4" type="submit" name="action">JOIN
+            <i class="mdi-content-add-circle right"></i>
+        </button>
+    </form>
+</div>
+
+<div class="section white">
+    <div class="row container">
+        <div id="chatbox" class="col m9 s12">
+            <div id="chatcontent">
+
+            </div>
+            <a class="waves-effect waves-light btn modal-trigger amber accent-4" href="#new-user">Join the chat</a>
+            <form id="send-message" class="hidden" >
+                <input id="message" placeholder="type a message..." type="text" required/>
+                <button class="btn waves-effect waves-light amber accent-4" type="submit" name="action">SEND
+                    <i class="mdi-content-send right"></i>
+                </button>
+            </form>
+        </div>
+        <div id="userlist" class=" col m3 s0 hide-on-small-and-down">
+
+        </div>
+    </div>
+</div>
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script src="../js/materialize.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+
+    $(document).ready(function(){
+        $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
+        $('.modal-trigger').leanModal();
+
+        var socket= io.connect();
+
+        var newUserForm = $('#new-user-form');
+        var userName = $('#chosen-username');
+        var nickError = $('#errortext');
+        var userlist = $('#userlist');
+        var messagebox = $('#message');
+
+
+
+        newUserForm.submit(function(e){
+            e.preventDefault();
+            socket.emit('new user',userName.val(),function(data){
+                if(data){
+                    $('#new-user').closeModal();
+                    $('#lean_overlay').click();
+                    $('.modal-trigger').hide();
+                    $('#send-message').removeClass('hidden');
+                }
+                else{
+                    nickError.html("that username is already taken.")
+                }
+            });
+        });
+
+        $('#send-message').submit(function(e){
+            e.preventDefault();
+            socket.emit('send message', messagebox.val());
+            messagebox.val('');
+        });
+
+
+        socket.on('usernames',function(data){
+            var html = '';
+            for(i = 0; i<data.length;i++){
+                html +=
+                '<div class="card-panel grey lighten-5 z-depth-1">' +
+                    '<div class="row">' +
+                        '<div class="col s2">' +
+                            '<img src="img/user-placeholder.png" alt="'+ data[i] + '" class="circle responsive-img"/>' +
+                        '</div>' +
+                        '<div class="col s10">' +
+                            ' <span class="black-text">'
+                            +data[i]+
+                            '</span>' +
+                        '</div>'+
+                    '</div>' +
+                '</div>';
+
+
+            }
+            userlist.html(html);
+        });
+        socket.on('new message',function(data){
+            $('#chatcontent').append("<b>"+ data.nick+": </b>" + data.msg + "<br/>")
+        });
+
+    });
+
+
+
+</script>
+
+</body>
+</html>
