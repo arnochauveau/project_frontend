@@ -115,9 +115,13 @@
 
             }
             userlist.html(html);
+            var objDiv = document.getElementById('userlists');
+            objDiv.scrollTop = objDiv.scrollHeight;
         });
         socket.on('new message',function(data){
             $('#chatcontent').append("<b>"+ data.nick+": </b>" + data.msg + "<br/>")
+            var objDiv = document.getElementById('chatcontent');
+            objDiv.scrollTop = objDiv.scrollHeight;
         });
 
     });

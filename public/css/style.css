@@ -26,6 +26,8 @@
 #chatcontent{
     height: 70%;
 
+    overflow-y: scroll;
+
 }
 #send-message{
     height: 20%;
@@ -33,6 +35,7 @@
 }
 #userlist{
     height:90%;
+    overflow-y: scroll;
 }
 .hidden{
     visibility: hidden;
