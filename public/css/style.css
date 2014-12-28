@@ -35,7 +35,7 @@
 }
 #userlist{
     height:90%;
-    overflow-y: scroll;
+
 }
 .hidden{
     visibility: hidden;

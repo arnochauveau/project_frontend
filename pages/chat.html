@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>Beers-Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/materialize.css" type="text/css" rel="stylesheet">
     <link href="../css/style.css" type="text/css" rel="stylesheet">
 </head>
@@ -116,13 +117,26 @@
             }
             userlist.html(html);
             var objDiv = document.getElementById('userlists');
-            objDiv.scrollTop = objDiv.scrollHeight;
+
         });
+
+
         socket.on('new message',function(data){
-            $('#chatcontent').append("<b>"+ data.nick+": </b>" + data.msg + "<br/>")
+            displayMessage(data);
             var objDiv = document.getElementById('chatcontent');
             objDiv.scrollTop = objDiv.scrollHeight;
         });
+
+        socket.on('load old msgs',function(data){
+            for(var i = 0; i<data.length; i++){
+                displayMessage(data[i]);
+                console.log(data[i]);
+            }
+        });
+
+        function displayMessage(data) {
+            $('#chatcontent').append("<b>" + data.nick + ": </b>" + data.msg + "<br/>");
+        }
 
     });
 
