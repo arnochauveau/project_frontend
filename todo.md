@@ -28,6 +28,8 @@
 - [ ] data opzoeken
 - [ ] data toevoegen aan mongoDB
 - [ ] API maken
+- [ ] Oauth
+
 
 
 
