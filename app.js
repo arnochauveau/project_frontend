@@ -53,7 +53,7 @@ io.sockets.on("connection", function (socket) {
     });
 
     socket.on('send message',function(data){
-        var newMsg = new ChatModel({msg: data,nick: socket.nickname});
+        var newMsg = new Chat({msg: data,nick: socket.nickname});
         newMsg.save(function(err){
            if(err) console.log(err);
 
