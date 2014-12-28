@@ -10,7 +10,7 @@ var app = require('./routes');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var Chat= require('./data/models/chat');
-var db = require('./data/connectDB');
+require('./data/connectDB');
 
 
 

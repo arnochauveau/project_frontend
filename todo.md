@@ -24,7 +24,7 @@
 - [x] chatter met websockets
 - [x] chatmessages opslaan in MONGODB
 - [x] routings aanmaken
-- [ ] tests schrijven(http://blog.codeship.com/jasmine-node-js-application-testing-tutorial/)
+- [ ] tests schrijven
 - [ ] data opzoeken
 - [ ] data toevoegen aan mongoDB
 - [ ] API maken
