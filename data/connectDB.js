@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 
 module.exports= (function(){
 
-    var mongodbURL = 'mongodb://localhost/chat';
+    var mongodbURL = 'mongodb://localhost/bier';
     var db = mongoose.connect(mongodbURL);
 
     mongoose.connection.on('error',function(err){
