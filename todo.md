@@ -1,6 +1,17 @@
 #To Do
-- [ ] SOC in front
-- [ ] data in backend plaatsen
+
+##Frontend
+- [ ] SOC
+- [ ] parrallax op 
+
+###bugs
+
+##Backend
+- [ ] data opzoeken
 - [ ] API maken
 
-##bugs
+
+###bugs
+
+
+
