@@ -4,31 +4,25 @@
 
 
 //Init stuff
-var path = require('path');
-var express = require('express');
-var app = express();
 
+
+var app = require('./routes');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var Chat= require('./data/models/chat');
+var db = require('./data/connectDB');
 
-var mongoose = require('mongoose');
 
 
 var nicknames = [];
 
 //ROUTING
-app.use(express.static(path.join(__dirname, 'public')));
-app.get('/',function(req,res){
-    res.sendFile(path.resolve(__dirname + '/pages/index.html'));
-});
-app.get('/chat',function(req,res){
-    res.sendFile(path.resolve(__dirname+ '/pages/chat.html'));
-});
+
 
 //socket stuff
 io.sockets.on("connection", function (socket) {
 
-    ChatModel.find({}).sort('-created').limit(8).exec(function(err,docs){
+    Chat.find({}).sort('-created').limit(8).exec(function(err,docs){
         if(err) console.log(err);
         socket.emit('load old msgs',docs);
     });
@@ -82,17 +76,9 @@ io.sockets.on("connection", function (socket) {
 
 });
 
-mongoose.connect('mongodb://localhost/chat',function(err){
-   if(err){
-       console.log(err);
-   }
-});
 
-var chatSchema = mongoose.Schema({
-    nick: String,
-    msg: String,
-    created: {type:Date, default: Date.now()}
-});
 
-var ChatModel = mongoose.model('Message',chatSchema);
+
+
+
 
