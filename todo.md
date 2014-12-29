@@ -25,10 +25,11 @@
 - [x] chatmessages opslaan in MONGODB
 - [x] routings aanmaken
 - [ ] tests schrijven
-- [ ] data opzoeken
-- [ ] data toevoegen aan mongoDB
+- [x] data opzoeken
+- [x] data toevoegen aan mongoDB
 - [ ] API maken
 - [ ] Oauth(http://passportjs.org/)
+- [ ] azure hosting
 
 
 
