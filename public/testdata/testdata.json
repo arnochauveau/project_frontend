@@ -34,7 +34,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-03-21 19:06:13"
+        "updateDate":"2012-03-21 19:06:13",
+        "established":"1905"
       },
       "country":{
         "isoCode":"BE",
@@ -122,7 +123,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:59",
-        "updateDate":"2012-03-21 19:06:07"
+        "updateDate":"2012-03-21 19:06:07",
+        "established":"2004"
       },
       "country":{
         "isoCode":"BE",
@@ -161,7 +163,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-03-21 19:06:04"
+        "updateDate":"2012-03-21 19:06:04",
+        "established":"1997"
       },
       "country":{
         "isoCode":"BE",
@@ -203,7 +206,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-03-21 19:06:13"
+        "updateDate":"2012-03-21 19:06:13",
+        "established":"1999"
       },
       "country":{
         "isoCode":"BE",
@@ -422,7 +426,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-03-21 19:06:19"
+        "updateDate":"2012-03-21 19:06:19",
+        "established":"2000"
       },
       "country":{
         "isoCode":"BE",
@@ -461,7 +466,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-03-21 19:06:05"
+        "updateDate":"2012-03-21 19:06:05",
+        "established":"1897"
       },
       "country":{
         "isoCode":"BE",
@@ -555,7 +561,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:52",
-        "updateDate":"2013-10-30 11:29:32"
+        "updateDate":"2013-10-30 11:29:32",
+        "established":"1996"
       },
       "country":{
         "isoCode":"BE",
@@ -594,7 +601,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:47",
-        "updateDate":"2012-03-21 19:06:04"
+        "updateDate":"2012-03-21 19:06:04",
+        "established":"1650"
       },
       "country":{
         "isoCode":"BE",
@@ -633,7 +641,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:58",
-        "updateDate":"2012-03-21 19:06:07"
+        "updateDate":"2012-03-21 19:06:07",
+        "established":"1784"
       },
       "country":{
         "isoCode":"BE",
@@ -765,7 +774,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:42:02",
-        "updateDate":"2012-03-21 19:06:07"
+        "updateDate":"2012-03-21 19:06:07",
+        "established":"1999"
       },
       "country":{
         "isoCode":"BE",
@@ -996,7 +1006,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-03-21 19:06:05"
+        "updateDate":"2012-03-21 19:06:05",
+        "established":"1878"
       },
       "country":{
         "isoCode":"BE",
@@ -1035,7 +1046,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-03-21 19:06:05"
+        "updateDate":"2012-03-21 19:06:05",
+        "established":"1807"
       },
       "country":{
         "isoCode":"BE",
@@ -1074,7 +1086,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:48",
-        "updateDate":"2012-03-21 19:06:04"
+        "updateDate":"2012-03-21 19:06:04",
+        "established":"1820"
       },
       "country":{
         "isoCode":"BE",
@@ -1161,7 +1174,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:48",
-        "updateDate":"2012-08-28 12:22:59"
+        "updateDate":"2012-08-28 12:22:59",
+        "established":"1717"
       },
       "country":{
         "isoCode":"BE",
@@ -1200,7 +1214,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:56",
-        "updateDate":"2012-03-21 19:06:06"
+        "updateDate":"2012-03-21 19:06:06",
+        "established":"1896"
       },
       "country":{
         "isoCode":"BE",
@@ -1241,7 +1256,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-06-01 15:24:28"
+        "updateDate":"2012-06-01 15:24:28",
+        "established":"1975"
       },
       "country":{
         "isoCode":"BE",
@@ -1280,7 +1296,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-03-21 19:06:04"
+        "updateDate":"2012-03-21 19:06:04",
+        "established":"1400"
       },
       "country":{
         "isoCode":"BE",
@@ -1320,7 +1337,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2014-07-29 19:39:12"
+        "updateDate":"2014-07-29 19:39:12",
+        "established":"1604"
       },
       "country":{
         "isoCode":"BE",
@@ -1360,7 +1378,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2013-09-28 14:24:36"
+        "updateDate":"2013-09-28 14:24:36",
+        "established":"1965"
       },
       "country":{
         "isoCode":"BE",
@@ -1442,7 +1461,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2013-05-10 18:10:09"
+        "updateDate":"2013-05-10 18:10:09",
+        "established":"1822"
       },
       "country":{
         "isoCode":"BE",
@@ -1484,7 +1504,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-03-21 19:06:05"
+        "updateDate":"2012-03-21 19:06:05",
+        "established":"1888"
       },
       "country":{
         "isoCode":"BE",
@@ -1522,7 +1543,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-03-21 19:06:05"
+        "updateDate":"2012-03-21 19:06:05",
+        "established":"1882"
       },
       "country":{
         "isoCode":"BE",
@@ -1562,7 +1584,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-08-12 23:23:15"
+        "updateDate":"2012-08-12 23:23:15",
+        "established":"1445"
       },
       "country":{
         "isoCode":"BE",
@@ -1607,7 +1630,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:47",
-        "updateDate":"2014-05-06 15:45:05"
+        "updateDate":"2014-05-06 15:45:05",
+        "established":"2002"
       },
       "country":{
         "isoCode":"BE",
@@ -1690,7 +1714,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:48",
-        "updateDate":"2013-05-10 02:05:26"
+        "updateDate":"2013-05-10 02:05:26",
+        "established":"1892"
       },
       "country":{
         "isoCode":"BE",
@@ -1732,7 +1757,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-03-21 19:06:04"
+        "updateDate":"2012-03-21 19:06:04",
+        "established":"1835"
       },
       "country":{
         "isoCode":"BE",
@@ -1769,7 +1795,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-03-21 19:06:04"
+        "updateDate":"2012-03-21 19:06:04",
+        "established":"1455"
       },
       "country":{
         "isoCode":"BE",
@@ -1857,7 +1884,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-03-21 19:06:04"
+        "updateDate":"2012-03-21 19:06:04",
+        "established":"1995"
       },
       "country":{
         "isoCode":"BE",
@@ -1902,7 +1930,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:44",
-        "updateDate":"2014-07-09 15:24:04"
+        "updateDate":"2014-07-09 15:24:04",
+        "established":"2004"
       },
       "country":{
         "isoCode":"BE",
@@ -2040,7 +2069,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-03-21 19:06:05"
+        "updateDate":"2012-03-21 19:06:05",
+        "established":"1830"
       },
       "country":{
         "isoCode":"BE",
@@ -2079,7 +2109,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2012-03-21 19:06:05"
+        "updateDate":"2012-03-21 19:06:05",
+        "established":"1629"
       },
       "country":{
         "isoCode":"BE",
@@ -2126,7 +2157,8 @@
         "status":"verified",
         "statusDisplay":"Verified",
         "createDate":"2012-01-03 02:41:49",
-        "updateDate":"2014-01-28 13:06:05"
+        "updateDate":"2014-01-28 13:06:05",
+        "established":"1850"
       },
       "country":{
         "isoCode":"BE",

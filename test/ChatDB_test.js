@@ -2,8 +2,7 @@
  * Created by arno on 28/12/2014.
  */
 
-require('../data/connectDB');
-var Chat= require('../data/models/chat');
+
 
 module.exports = {
 
