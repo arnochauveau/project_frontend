@@ -4,11 +4,11 @@
 - [x] opmaak
 - [ ] chat pagina cleaner maken
 - [ ] chat pagina angularizen
-- [ ] maps integratie
+- [x] maps integratie
 - [ ] SOC refactoring
 - [ ] credits pagina
 - [ ] filter op homepage
-- [ ] pins op google map
+- [x] pins op google map
 - [ ] timeline
 - [ ] HTML en CSS opkuisen
 
