@@ -13,7 +13,9 @@
 - [ ] HTML en CSS opkuisen
 
 ###bugs
-- [ ] maps op mobile werkt niet
+- [x] maps op mobile werkt niet
+- [ ] markers op maps hebben een timeout nodig
+
 
 ###nice to have
 - [ ] parrallax op google maps
@@ -27,7 +29,7 @@
 - [ ] tests schrijven
 - [x] data opzoeken
 - [x] data toevoegen aan mongoDB
-- [ ] API maken
+- [x] API maken
 - [ ] Oauth(http://passportjs.org/)
 - [ ] azure hosting
 

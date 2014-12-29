@@ -27,7 +27,7 @@
            console.log(marker);
        }
 
-   },100);
+   },500);
 
 
 

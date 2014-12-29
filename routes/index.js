@@ -14,6 +14,7 @@ app.get('/',Site.index);
 app.get('/chat',Site.chat);
 
 app.get('/Brewerys',Brewery.list);
+app.get('/brewery/add',Brewery.add);
 
 
 
