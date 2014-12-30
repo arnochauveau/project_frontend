@@ -2,13 +2,14 @@
  * Created by arno on 28/12/2014.
  */
 var express =  require('express');
-var path = require('path');
+var app = express();
+
+require('./config')(app);
+require('../passport/strategies');
+require('../passport/session');
 
 var Site = require('./site');
 var Brewery = require('./brewery');
-
-var app = express();
-app.use(express.static(path.join(__dirname, '/../public')));
 
 app.get('/',Site.index);
 app.get('/chat',Site.chat);
