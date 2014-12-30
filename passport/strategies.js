@@ -4,7 +4,16 @@
 
 var passport = require('passport');
 var localStrategy = require('passport-local').Strategy;
+var User = require('../data/models/users');
+
 
 passport.use(new localStrategy(
-
+    function(username, password, done){
+        User.findOne({nick:username},function(err,user){
+            if(err)
+            return done(err);
+            if(!user)
+            return done(null,false,{message: 'Incorrect username'})
+        });
+    }
 ));

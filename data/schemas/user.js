@@ -9,4 +9,8 @@ var userSchema = mongoose.Schema({
 
 });
 
+userSchema.methods.validPassword = function(password){
+
+}
+
 module.exports = userSchema;
