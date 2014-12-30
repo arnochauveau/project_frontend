@@ -10,12 +10,15 @@ require('../passport/session');
 
 var Site = require('./site');
 var Brewery = require('./brewery');
+var User = require('./user');
 
 app.get('/',Site.index);
 app.get('/chat',Site.chat);
 
 app.get('/Brewerys',Brewery.list);
 app.get('/brewery/add',Brewery.add);
+
+app.get('/users/add',User.add);
 
 
 

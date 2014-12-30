@@ -9,7 +9,7 @@ var passport = require('passport');
 var config = function(app){
 
         app.use(express.static(path.join(__dirname, '/../public')));
-        app.use(session({secret:'NMCT IS LEUK'}));
+        app.use(session({secret:'NMCT IS LEUK',saveUninitialized: true, resave: true}));
         app.use(passport.initialize());
         app.use(passport.session());
 };
