@@ -32,6 +32,7 @@
 - [x] API maken
 - [ ] Oauth(http://passportjs.org/)
 - [ ] azure hosting
+- [ ] bcrypt in password
 
 
 
