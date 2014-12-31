@@ -9,13 +9,13 @@ var User = require('../data/models/user');
 
 passport.use(new localStrategy(
     function(username, password, done){
-        User.findOne({nick:username},function(err,user){
+        User.findOne({username:username},function(err,user){
             if(err)
                 return done(err);
             if(!user)
                 return done(null,false,{message: 'Incorrect username'});
             if(!user.validPassword(password))
-                return done(null,false,{message: 'incorrect password'});
+                return done(null,false,{message: 'Incorrect password'});
 
             return done(null,user);
         });

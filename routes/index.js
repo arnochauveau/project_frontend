@@ -20,6 +20,7 @@ app.get('/brewery/add',Brewery.add);
 
 app.get('/users/add',User.add);
 
+app.post('/login',User.login);
 
 
 module.exports= app;

@@ -10,6 +10,7 @@
 
 </head>
 <body ng-controller="breweryController">
+
 <nav class="amber">
     <div class="container">
         <div class="nav-wrapper">
@@ -18,13 +19,33 @@
                 <li><a href="/">Map</a></li>
                 <li><a href="/chat">Chat</a></li>
                 <li><a href="#About">About</a></li>
-                <li><a href="#credits">Credits</a></li>
+                <li><a href="#loginmodal" class="modal-trigger">Log in</a></li>
             </ul>
             <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
         </div>
     </div>
 </nav>
+<div id="loginmodal" class="modal">
+    <h4>Login</h4>
+    <form action="/login" method="post">
+        <div class="row">
+            <div class="input-field">
+                <input id="username" type="text" name="username" >
+                <label for="username">Username</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input id="password" type="password" name="password" >
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit" name="action" class="btn amber accent-4">log in</button>
 
+        </div>
+    </form>
+</div>
         <div id="map-canvas"></div>
 
 <div class="section white">
@@ -60,6 +81,7 @@
 
     $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
     $('.parallax').parallax();
+    $('.modal-trigger').leanModal();
 
 </script>
 </body>
