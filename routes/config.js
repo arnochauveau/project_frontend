@@ -11,7 +11,7 @@ var cookieParser = require('cookie-parser');
 
 
 var config = function(app){
-        
+
         app.use(express.static(path.join(__dirname, '/../public')));
         app.use(cookieParser()); // read cookies (needed for auth)
         app.use(bodyParser.json()); // get information from html forms
