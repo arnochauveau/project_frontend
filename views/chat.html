@@ -21,16 +21,7 @@
         </div>
     </div>
 </nav>
-<div id="new-user" class="modal">
-    <form id="new-user-form">
-        <p>Enter a username:</p>
-        <input id="chosen-username" placeholder="e.g. FancyUsername123" type="text" required/>
-        <blockquote id="errortext"></blockquote>
-        <button class="btn waves-effect waves-light amber accent-4" type="submit" name="action">JOIN
-            <i class="mdi-content-add-circle right"></i>
-        </button>
-    </form>
-</div>
+
 
 <div class="section white">
     <div class="row container">
@@ -38,7 +29,7 @@
             <div id="chatcontent">
 
             </div>
-            <a class="waves-effect waves-light btn modal-trigger amber accent-4" href="#new-user">Join the chat</a>
+
             <form id="send-message" class="hidden" >
                 <input id="message" placeholder="type a message..." type="text" required/>
                 <button class="btn waves-effect waves-light amber accent-4" type="submit" name="action">SEND
@@ -61,32 +52,17 @@
 
     $(document).ready(function(){
         $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
-        $('.modal-trigger').leanModal();
+
 
         var socket= io.connect();
 
-        var newUserForm = $('#new-user-form');
-        var userName = $('#chosen-username');
-        var nickError = $('#errortext');
+
         var userlist = $('#userlist');
         var messagebox = $('#message');
 
 
 
-        newUserForm.submit(function(e){
-            e.preventDefault();
-            socket.emit('new user',userName.val(),function(data){
-                if(data){
-                    $('#new-user').closeModal();
-                    $('#lean_overlay').click();
-                    $('.modal-trigger').hide();
-                    $('#send-message').removeClass('hidden');
-                }
-                else{
-                    nickError.html("that username is already taken.")
-                }
-            });
-        });
+
 
         $('#send-message').submit(function(e){
             e.preventDefault();

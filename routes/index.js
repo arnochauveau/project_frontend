@@ -19,6 +19,8 @@ app.get('/Brewerys',Brewery.list);
 app.get('/brewery/add',Brewery.add);
 
 app.get('/users/add',User.add);
+app.get('/user',User.CurrentUser);
+
 
 app.post('/login',User.login);
 

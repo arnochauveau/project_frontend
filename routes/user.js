@@ -39,6 +39,13 @@ exports.login = function(req,res,next){
     })(req, res, next);
 };
 
+exports.CurrentUser = function(req,res){
+    if(req.user)
+    res.send(req.user);
+    else
+    res.send(false);
+}
+
 exports.fbcb = function(req,res,next){
   passport.authenticate('facebook',{successRedirect:'/',failureRedirect:'/login'})(req, res, next);
 };
