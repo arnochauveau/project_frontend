@@ -29,13 +29,21 @@ exports.login = function(req,res,next){
         if (err) { return next(err) }
         if (!user) {
             req.session.messages =  [info.message];
-            //return res.redirect('/login')
-            res.send(info.message);
+            return res.redirect('/login')
+
         }
         req.logIn(user, function(err) {
             if (err) { return next(err); }
             return res.redirect('/');
         });
     })(req, res, next);
+};
+
+exports.fbcb = function(req,res,next){
+  passport.authenticate('facebook',{successRedirect:'/',failureRedirect:'/login'})(req, res, next);
+};
+
+exports.fb =function(req,res,next){
+  passport.authenticate('facebook')(req, res, next);
 };
 

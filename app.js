@@ -68,9 +68,9 @@ io.sockets.on("connection", function (socket) {
 
 
 //start listening
- http.listen(3000,function(){
+ http.listen(80,function(){
     var host = "localhost";
-    var port = "3000";
+    var port = "80";
 
     console.log('Webserver listening at http://%s:%s',host,port);
 

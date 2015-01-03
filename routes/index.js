@@ -22,5 +22,7 @@ app.get('/users/add',User.add);
 
 app.post('/login',User.login);
 
+app.get('/login/facebook',User.fb);
+app.get('/login/facebook/callback',User.fbcb);
 
 module.exports= app;
