@@ -17,14 +17,14 @@
    setTimeout(function(){
 
       var brewerydata = window.myscope.breweryData;
-       console.log(window.myscope.breweryData[1]);
+
        for(var i = 0; i< brewerydata.length;i++){
            var marker = new google.maps.Marker({
                position: new google.maps.LatLng(brewerydata[i].latitude,brewerydata[i].longitude),
                map:map,
                title: brewerydata[i].name
            });
-           console.log(marker);
+
        }
 
    },500);

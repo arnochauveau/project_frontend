@@ -9,3 +9,7 @@ exports.index = function(req,res){
 exports.chat = function(req,res){
     res.sendFile(path.resolve(__dirname+ '/../views/chat.html'));
 };
+
+exports.login = function(req,res){
+    res.sendFile(path.resolve( __dirname + '/../views/login.html'));
+};

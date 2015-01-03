@@ -21,8 +21,10 @@ app.get('/brewery/add',Brewery.add);
 app.get('/users/add',User.add);
 app.get('/user',User.CurrentUser);
 
-
+app.get('/login',Site.login);
 app.post('/login',User.login);
+
+app.get('/logout',User.logout);
 
 app.get('/login/facebook',User.fb);
 app.get('/login/facebook/callback',User.fbcb);

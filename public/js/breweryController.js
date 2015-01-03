@@ -14,3 +14,4 @@ window.myscope=$scope;
         console.log("error: " + response);
     };
 };
+

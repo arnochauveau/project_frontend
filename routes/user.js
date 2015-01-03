@@ -54,3 +54,8 @@ exports.fb =function(req,res,next){
   passport.authenticate('facebook')(req, res, next);
 };
 
+exports.logout = function(req,res){
+    req.logout();
+    res.redirect('/');
+};
+
