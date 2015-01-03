@@ -1,12 +1,12 @@
-<html>
+<html ng-app>
 <head>
     <title>Beers-Chat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/materialize.css" type="text/css" rel="stylesheet">
     <link href="../css/style.css" type="text/css" rel="stylesheet">
 </head>
-<body>
-<nav class="amber">
+<body ng-controller="userController">
+<nav  class="amber">
     <div class="container">
         <div class="nav-wrapper">
             <a href="#" class="brand-logo"><img  src="../img/beerlogo_03.png"/></a>
@@ -14,8 +14,8 @@
                 <li><a href="/">Map</a></li>
                 <li><a href="/chat">Chat</a></li>
                 <li><a href="#About">About</a></li>
-                <li><a href="#credits">Credits</a></li>
-
+                <li><a ng-if="!user" href="/login" >Log in</a></li>
+                <li><a ng-if="user" href="/logout" >Log out {{user.username}}</a></li>
             </ul>
             <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
         </div>
@@ -45,11 +45,14 @@
 
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="../js/materialize.js"></script>
+<script src="../js/lib/materialize.js"></script>
+<script src="../js/lib/angular.js"></script>
+<script src="../js/controllers/userController.js"></script>
+
 <script src="/socket.io/socket.io.js"></script>
 
 <script>
-
+//TODO angularize this crap
     $(document).ready(function(){
         $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
 
