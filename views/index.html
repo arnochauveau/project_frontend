@@ -6,7 +6,7 @@
     <link href="../css/style.css" type="text/css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvvKp1bEZ78wCeNR0dwCM5D6IGoEF_Pp8"></script>
+
 
 </head>
 <body ng-controller="breweryController">
@@ -26,7 +26,10 @@
         </div>
     </div>
 </nav>
-        <div id="map-canvas"></div>
+        <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">
+            <ui-gmap-markers models="markers" coords="'self'" icon="'icon'">
+            </ui-gmap-markers>
+        </ui-gmap-google-map>
 
 <div class="section white">
     <div class="row container">
@@ -49,20 +52,25 @@
 
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
 <script src="../js/lib/angular.js"></script>
+<script src="../js/lib/lodash.js"></script>
+<script src="../js/lib/angular-google-maps.js"></script>
 <script src="../js/app.js"></script>
 <script src="../js/lib/socket.js"></script>
 <script src="../js/services.js"></script>
 <script src="../js/controllers/breweryController.js"></script>
 <script src="../js/controllers/userController.js"></script>
 
+
+
 <script type="text/javascript" src="../js/lib/materialize.js"></script>
-<script src="../js/maps/init.js"></script>
+
 <script>
 
     $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
-    $('.parallax').parallax();
-    $('.modal-trigger').leanModal();
+
+
 
 </script>
 </body>
