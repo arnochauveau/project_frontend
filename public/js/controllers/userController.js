@@ -1,17 +1,21 @@
 /**
  * Created by arno on 03/01/2015.
  */
-var userController = function($scope,$http){
+var userController = function($scope,userdata){
 
 
 
-    $http.get('/user').then(onsucces,onerror);
+    userdata.then(onsucces,onerror);
 
     function onsucces(response){
 
         $scope.user = null;
         if(response.data != 'false')
         $scope.user = response.data;
+
+
+
+
 
 
     };

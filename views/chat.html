@@ -1,4 +1,4 @@
-<html ng-app>
+<html ng-app="App">
 <head>
     <title>Beers-Chat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,22 +23,35 @@
 </nav>
 
 
-<div class="section white">
+<div class="section white" ng-controller="chatController">
     <div class="row container">
         <div id="chatbox" class="col m9 s12">
             <div id="chatcontent">
-
+                <div ng-repeat="msg in messages">
+                <strong>{{msg.nick}} :</strong> {{msg.msg}}
+                </div>
             </div>
 
-            <form id="send-message" class="hidden" >
-                <input id="message" placeholder="type a message..." type="text" required/>
-                <button class="btn waves-effect waves-light amber accent-4" type="submit" name="action">SEND
+            <form id="send-message" ng-if="loggedIn" >
+                <input  placeholder="type a message..." type="text" ng-model="$parent.message" ui-keypress="{'enter':'sendMessage()'}" />
+                <button class="btn waves-effect waves-light amber accent-4" ng-click="sendMessage()">SEND
                     <i class="mdi-content-send right"></i>
                 </button>
             </form>
         </div>
-        <div id="userlist" class=" col m3 s0 hide-on-small-and-down">
-
+        <div id="userlist" class=" col m3 s0 hide-on-small-and-down" >
+            <div class="card-panel grey lighten-5 z-depth-1" ng-repeat="username in usernames">
+                <div class="row">
+                    <div class="col s2">
+                        <img src="img/user-placeholder.png" alt="placeholder" class="circle responsive-img"/>
+                    </div>
+                    <div class="col s10">
+                         <span class="black-text">
+                            {{username}}
+                            </span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -47,80 +60,14 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="../js/lib/materialize.js"></script>
 <script src="../js/lib/angular.js"></script>
-<script src="../js/controllers/userController.js"></script>
-
 <script src="/socket.io/socket.io.js"></script>
+<script src="../js/lib/socket.js"></script>
+<script src="../js/app.js"></script>
 
-<script>
-//TODO angularize this crap
-    $(document).ready(function(){
-        $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
+<script src="../js/services.js"></script>
+<script src="../js/controllers/userController.js"></script>
+<script src="../js/controllers/chatController.js"></script>
 
-
-        var socket= io.connect();
-
-
-        var userlist = $('#userlist');
-        var messagebox = $('#message');
-
-
-
-
-
-        $('#send-message').submit(function(e){
-            e.preventDefault();
-            socket.emit('send message', messagebox.val());
-            messagebox.val('');
-        });
-
-
-        socket.on('usernames',function(data){
-            var html = '';
-            for(i = 0; i<data.length;i++){
-                html +=
-                '<div class="card-panel grey lighten-5 z-depth-1">' +
-                    '<div class="row">' +
-                        '<div class="col s2">' +
-                            '<img src="img/user-placeholder.png" alt="'+ data[i] + '" class="circle responsive-img"/>' +
-                        '</div>' +
-                        '<div class="col s10">' +
-                            ' <span class="black-text">'
-                            +data[i]+
-                            '</span>' +
-                        '</div>'+
-                    '</div>' +
-                '</div>';
-
-
-            }
-            userlist.html(html);
-            var objDiv = document.getElementById('userlists');
-
-        });
-
-
-        socket.on('new message',function(data){
-            displayMessage(data);
-            var objDiv = document.getElementById('chatcontent');
-            objDiv.scrollTop = objDiv.scrollHeight;
-        });
-
-        socket.on('load old msgs',function(data){
-            for(var i = 0 ; i< data.length; i++){
-                displayMessage(data[i]);
-                console.log(data[i]);
-            }
-        });
-
-        function displayMessage(data) {
-            $('#chatcontent').append("<b>" + data.nick + ": </b>" + data.msg + "<br/>");
-        }
-
-    });
-
-
-
-</script>
 
 </body>
 </html>

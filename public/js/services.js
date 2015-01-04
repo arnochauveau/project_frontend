@@ -1,26 +1,16 @@
 /**
  * Created by arno on 03/01/2015.
  */
-app.factory('socket', function ($rootScope) {
-    var socket = io.connect();
-    return {
-        on: function (eventName, callback) {
-            socket.on(eventName, function () {
-                var args = arguments;
-                $rootScope.$apply(function () {
-                    callback.apply(socket, args);
-                });
-            });
-        },
-        emit: function (eventName, data, callback) {
-            socket.emit(eventName, data, function () {
-                var args = arguments;
-                $rootScope.$apply(function () {
-                    if (callback) {
-                        callback.apply(socket, args);
-                    }
-                });
-            })
-        }
-    };
+App.factory('socket', function (socketFactory) {
+    var mysocket = socketFactory();
+    mysocket.forward('usernames');
+    mysocket.forward('new message');
+
+
+    return mysocket;
 });
+
+
+App.factory('userdata',['$http',function($http){
+    return $http.get('/user');
+}]);

@@ -28,20 +28,16 @@ io.sockets.on("connection", function (socket) {
     });
 
     // here are connections from /new
-    socket.on('new user',function(data,callback){
+    socket.on('new user',function(data){
         console.log("new user");
-        if(nicknames.indexOf(data) != -1){
 
-            callback(false);
 
-        }
-        else{
-            callback(true);
+
             socket.nickname = data;
             nicknames.push(socket.nickname);
             io.sockets.emit('usernames',nicknames);
 
-        }
+
     });
     socket.on('disconnect',function(data){
         if(!socket.nickname){
