@@ -6,7 +6,7 @@
 }
 
 .angular-google-map-container{
-    height: 70%;
+    height: 100%;
     margin: 0;
     padding: 0;
 
@@ -31,4 +31,19 @@
 .hidden{
     visibility: hidden;
 }
+.controls{
+    position: absolute;
+    top: 90%;
+    left:10px;
+}
+#infopanel{
+    position: absolute;
 
+    right:5px;
+
+    top: 70px;
+
+}
+body{
+    overflow-y: hidden;
+}

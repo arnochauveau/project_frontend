@@ -27,29 +27,24 @@
     </div>
 </nav>
         <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">
-            <ui-gmap-markers models="breweryData" idkey="'_id'"  coords="'self'" icon="'icon'">
+            <ui-gmap-markers models="breweryData" idkey="'_id'"  coords="'self'" events="events" icon="'icon'">
             </ui-gmap-markers>
         </ui-gmap-google-map>
 
-<div class="section white">
-    <div class="row container">
-        <h2>Select a pin for more information <a href="" class="btn-floating amber accent-4"><i class="mdi-content-filter-list"></i></a>  <a href="" class="btn-floating amber accent-4"><i class="mdi-content-add"></i></a></h2>
+    <div class="controls">
+         <a href="" class="btn-floating amber accent-4"><i class="mdi-content-filter-list"></i></a>  <a href="" class="btn-floating amber accent-4"><i class="mdi-content-add"></i></a>
     </div>
-    <div class="row container">
-        <div class="col m3 s12" ng-repeat="b in breweryData">
-            <div class="card-panel brouwerijcard">
-                <span class="card-title">{{b.name}}</span>
-                <div class="card-content">
-                    <p>{{b.streetAddress + ", " + b.locality}}</p>
-                </div>
-                <div class="card-action">
-                 <a href="{{b.website}}">visit website</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
+<div ng-if="selectedmarker" id="infopanel" class="card white ">
+    <div class="card-content  ">
+        <span class="card-title grey-text">{{selectedmarker.name}}</span>
+        <p><div>{{selectedmarker.streetAddress}}</div>
+        <div>{{selectedmarker.locality}}</div></p>
+    </div>
+    <div class="card-action">
+        <a ng-if="selectedmarker.website" href="{{selectedmarker.website}}">VISIT WEBSITE</a>
+        <a ng-click="close()" href='#'>CLOSE</a>
+    </div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -69,6 +64,16 @@
 <script>
 
     $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
+//TODO implement filter pane
+//TODO Add timeline to filter pane
+//TODO Add 'new brewery' pane
+//TODO add about page
+//TODO add since in details pane
+//TODO DELETE INCOMPLETE DATA
+//TODO test schrijven yay
+//TODO maak offline deel
+//TODO maak DB-import script
+//TODO optimise JS + CSS
 
 
 
