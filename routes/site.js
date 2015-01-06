@@ -17,3 +17,7 @@ exports.login = function(req,res){
 exports.register = function(req,res){
     res.sendFile(path.resolve( __dirname + '/../views/register.html'));
 };
+
+exports.about = function(req,res){
+    res.sendFile(path.resolve(__dirname + '/../views/about.html'));
+};

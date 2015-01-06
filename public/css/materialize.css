@@ -8603,6 +8603,12 @@ ul.table-of-contents a.active {
   border-top-color: #aaaaaa;
 }
 
+.brand-logo > img{
+  height: 50px;
+  width: auto;
+  margin-left: 10px;
+  margin-top: 5px;
+}
 /* ==========================================================================
    CUSTOM MATERIALIZE STYLES
    ========================================================================== */

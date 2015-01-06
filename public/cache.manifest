@@ -1,0 +1,20 @@
+CACHE MANIFEST
+#rev7
+
+
+../js/lib/jquery.js
+../js/lib/angular.js
+../js/lib/lodash.js
+../js/lib/angular-google-maps.js
+../js/lib/socket.js
+../js/app.js
+../js/services.js
+../js/controllers/userController.js
+../js/controllers/breweryController.js
+../js/controllers/chatController.js
+../js/lib/materialize.js
+../img/beerlogo_03.png
+../css/materialize.css
+../css/style.css
+../font/roboto/Roboto-Regular.ttf
+../font/roboto/Roboto-Light.ttf

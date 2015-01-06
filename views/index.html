@@ -1,4 +1,4 @@
-<html ng-app="App">
+<html ng-app="App" manifest="/cache.manifest">
 <head >
     <title>Beers-Map</title>
 
@@ -14,11 +14,11 @@
 <nav ng-controller="userController" class="amber">
     <div class="container">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo"><img  src="../img/beerlogo_03.png"/></a>
+            <a href="/" class="brand-logo"><img  src="../img/beerlogo_03.png"/></a>
             <ul id="nav-mobile" class="right side-nav">
                 <li><a href="/">Map</a></li>
                 <li><a href="/chat">Chat</a></li>
-                <li><a href="#About">About</a></li>
+                <li><a href="/about">About</a></li>
                 <li><a ng-if="!user" href="/login" >Log in</a></li>
                 <li><a ng-if="user" href="/logout" >Log out {{user.username}}</a></li>
             </ul>
@@ -36,8 +36,11 @@
 <div ng-if="selectedmarker" id="infopanel" class="card white ">
     <div class="card-content  ">
         <span class="card-title grey-text">{{selectedmarker.name}}</span>
-        <p><div>{{selectedmarker.streetAddress}}</div>
-        <div>{{selectedmarker.locality}}</div></p>
+        <p>brewing since: {{selectedmarker.established}}</p>
+        <blockquote>
+        <div>{{selectedmarker.streetAddress}}</div>
+        <div>{{selectedmarker.locality}}</div>
+        </blockquote>
     </div>
     <div class="card-action">
         <a ng-if="selectedmarker.website" href="{{selectedmarker.website}}">VISIT WEBSITE</a>
@@ -108,8 +111,7 @@
 </div>
 
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
+<script  src="../js/lib/jquery.js"></script>
 <script src="../js/lib/angular.js"></script>
 <script src="../js/lib/lodash.js"></script>
 <script src="../js/lib/angular-google-maps.js"></script>
@@ -129,9 +131,7 @@
 
 
 
-//TODO add about page
-//TODO add since in details pane
-//TODO DELETE INCOMPLETE DATA
+
 //TODO test schrijven yay
 //TODO maak offline deel
 //TODO maak DB-import script

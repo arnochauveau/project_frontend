@@ -1,4 +1,4 @@
-<html ng-app="App">
+<html ng-app="App" manifest="/cache.manifest">
 <head>
     <title>Beers-Chat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,11 +9,11 @@
 <nav  class="amber">
     <div class="container">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo"><img  src="../img/beerlogo_03.png"/></a>
+            <a href="/" class="brand-logo"><img  src="../img/beerlogo_03.png"/></a>
             <ul id="nav-mobile" class="right side-nav">
                 <li><a href="/">Map</a></li>
                 <li><a href="/chat">Chat</a></li>
-                <li><a href="#About">About</a></li>
+                <li><a href="/about">About</a></li>
                 <li><a ng-if="!user" href="/login" >Log in</a></li>
                 <li><a ng-if="user" href="/logout" >Log out {{user.username}}</a></li>
             </ul>
@@ -57,8 +57,7 @@
 </div>
 
 
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="../js/lib/materialize.js"></script>
+<script  src="../js/lib/jquery.js"></script><script src="../js/lib/materialize.js"></script>
 <script src="../js/lib/angular.js"></script>
 <script src="../js/lib/lodash.js"></script>
 <script src="../js/lib/angular-google-maps.js"></script>

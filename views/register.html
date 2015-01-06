@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest="/cache.manifest">
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -18,11 +18,11 @@
 <nav ng-controller="userController" class="amber">
     <div class="container">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo"><img  src="../img/beerlogo_03.png"/></a>
+            <a href="/" class="brand-logo"><img  src="../img/beerlogo_03.png"/></a>
             <ul id="nav-mobile" class="right side-nav">
                 <li><a href="/">Map</a></li>
                 <li><a href="/chat">Chat</a></li>
-                <li><a href="#About">About</a></li>
+                <li><a href="/about">About</a></li>
                 <li><a ng-if="!user" href="/login" >Log in</a></li>
                 <li><a ng-if="user" href="/logout" >Log out {{user.username}}</a></li>
             </ul>
@@ -56,7 +56,7 @@
         </div>
     </form>
 </div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script  src="../js/lib/jquery.js"></script>
 <script src="../js/lib/angular.js"></script>
 <script src="../js/lib/lodash.js"></script>
 <script src="../js/lib/angular-google-maps.js"></script>
