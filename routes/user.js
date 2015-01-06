@@ -1,7 +1,7 @@
 /**
  * Created by arno on 30/12/2014.
  */
-require('../data/connectDB');
+ require('../data/connectDB');
 var User = require('../data/models/user');
 var bcrypt = require('bcrypt');
 var passport = require('passport');

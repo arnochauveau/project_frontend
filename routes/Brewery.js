@@ -2,13 +2,14 @@
  * Created by arno on 29/12/2014.
  */
 
-require('../data/connectDB');
+var con = require('../data/connectDB');
 var Brewery= require('../data/models/brewery');
 
 exports.list = function(req,res){
     Brewery.find({}).sort('established').exec(function(err,docs){
         if(err) console.log(err);
         res.send(docs);
+
     });
 };
 // TESTQUERY: http://localhost:3000/brewery/add?name=brouwerij%20achouffe&website=http:\/\/www.achouffe.be&streetAddress=Achouffe%2032&locality=Achoufe&established=1982&latitude=50.147778&longitude=5.754207
@@ -26,6 +27,6 @@ exports.add = function(req,res){
         if(err)
         console.log(err);
 
-        res.send('brewery added successfully');
+        res.redirect('/')
     });
 };

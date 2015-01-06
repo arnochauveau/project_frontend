@@ -4,7 +4,7 @@
 
     <link href="../css/materialize.css" type="text/css" rel="stylesheet">
     <link href="../css/style.css" type="text/css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
 
 
 
@@ -27,13 +27,11 @@
     </div>
 </nav>
         <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">
-            <ui-gmap-markers models="breweryData" idkey="'_id'"  coords="'self'" events="events" icon="'icon'">
+            <ui-gmap-markers models="markers" idkey="'_id'"  coords="'self'" events="events" icon="'icon'">
             </ui-gmap-markers>
         </ui-gmap-google-map>
 
-    <div class="controls">
-         <a href="" class="btn-floating amber accent-4"><i class="mdi-content-filter-list"></i></a>  <a href="" class="btn-floating amber accent-4"><i class="mdi-content-add"></i></a>
-    </div>
+
 
 <div ng-if="selectedmarker" id="infopanel" class="card white ">
     <div class="card-content  ">
@@ -45,6 +43,70 @@
         <a ng-if="selectedmarker.website" href="{{selectedmarker.website}}">VISIT WEBSITE</a>
         <a ng-click="close()" href='#'>CLOSE</a>
     </div>
+</div>
+
+
+<div class="controls">
+    <a  ng-click="filterClicked()" class="btn-floating amber accent-4"><i class="mdi-action-history"></i></a>
+    <a ng-click="addClicked()" class="btn-floating amber accent-4"><i class="mdi-file-cloud-upload"></i></a>
+    </div>
+<div class="row">
+<div id="filterpanel" ng-if="filter" class="col s12 white">
+    <div class="row">
+        <div class="col s12">
+            <div>Go back in time, year: {{year}}</div>
+            <p class="range-field">
+            <input type="range" min="1100" ng-change="yearChanged()" ng-model="year" max="2015"/>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+<div class="row white ">
+<div id="Addpanel" ng-if="add" class="col s12 white">
+<form action="/brewery/add" method="get">
+        <div class="row">
+            <div class="input-field col s6 l3 ">
+                <input id="name" type="text"  name="name" >
+                <label for="name">name of brewery</label>
+            </div>
+            <div class="input-field col s6 l3 ">
+                <input id="established" type="text"  name="established" >
+                <label for="established">established in (year)</label>
+            </div>
+            <div class="input-field col s6 ">
+                <input id="website"  type="text" name="website" >
+                <label for="website">website</label>
+            </div>
+
+        <div class="input-field col l3 s6">
+        <input id="address"  type="text" name="streetAddress" >
+        <label for="address">address</label>
+            </div>
+            <div class="input-field col l3 s6">
+                <input id="locality"  type="text" name="locality" >
+                <label for="locality">city</label>
+            </div>
+            <div class="input-field col s3">
+                <input id="latitude"  type="text" name="latitude" >
+                <label for="latitude">latitude</label>
+            </div>
+        <div class="input-field col s3">
+            <input id="longitude"  type="text" name="longitude" >
+            <label for="longitude">longitude</label>
+        </div>
+
+            <div class="col s6 offset-s3 l6 offset-l0">
+            <button class="btn waves-effect waves-light amber accent-4" type="submit" name="action">Submit
+                <i class="mdi-action-done right"></i>
+            </button>
+            </div>
+    </div>
+</form>
+
+</div>
+</div>
+
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -64,9 +126,9 @@
 <script>
 
     $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
-//TODO implement filter pane
-//TODO Add timeline to filter pane
-//TODO Add 'new brewery' pane
+
+
+//TODO Add register page
 //TODO add about page
 //TODO add since in details pane
 //TODO DELETE INCOMPLETE DATA
