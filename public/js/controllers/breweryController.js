@@ -38,7 +38,10 @@ var breweryController = function ($scope, $http, uiGmapGoogleMapApi) {
         };
 
         $scope.yearChanged = function () {
+            console.log('hallokes');
+            $scope.markers = null;
             $scope.markers = [];
+
 
             for (var i = 0; i < $scope.breweryData.length; i++) {
                 if ($scope.breweryData[i].established <= $scope.year) {

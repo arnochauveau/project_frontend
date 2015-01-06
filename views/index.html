@@ -49,7 +49,7 @@
                     <div class="col s12">
                         <div>Go back in time, year: {{year}}</div>
                         <p class="range-field">
-                            <input type="range" min="1100" ng-change="yearChanged()" ng-model="year" max="2015"/>
+                            <input type="range" min="1100" ng-change="$parent.yearChanged()" ng-model="$parent.year" max="2015"/>
                         </p>
                     </div>
                 </div>
