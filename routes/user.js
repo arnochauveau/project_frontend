@@ -8,16 +8,16 @@ var passport = require('passport');
 
 exports.add= function(req,res){
 
-    bcrypt.hash(req.query.password,null,null,function(err, hash){
+    bcrypt.hash(req.body.password,null,null,function(err, hash){
         var newUser = new User({
-            username: req.query.username,
+            username: req.body.username,
             password: hash
         });
         newUser.save(function(err){
            if(err)
            res.send('error');
 
-            res.send('user toegevoegd');
+            res.redirect(307, '/login');
         });
     });
 

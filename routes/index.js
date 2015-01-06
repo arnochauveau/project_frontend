@@ -18,8 +18,9 @@ app.get('/chat',Site.chat);
 app.get('/Brewerys',Brewery.list);
 app.get('/brewery/add',Brewery.add);
 
-app.get('/users/add',User.add);
+app.post('/users/add',User.add);
 app.get('/user',User.CurrentUser);
+app.get('/users/register',Site.register);
 
 app.get('/login',Site.login);
 app.post('/login',User.login);

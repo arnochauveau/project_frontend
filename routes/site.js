@@ -13,3 +13,7 @@ exports.chat = function(req,res){
 exports.login = function(req,res){
     res.sendFile(path.resolve( __dirname + '/../views/login.html'));
 };
+
+exports.register = function(req,res){
+    res.sendFile(path.resolve( __dirname + '/../views/register.html'));
+};
