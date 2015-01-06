@@ -1,62 +1,68 @@
 
-
-.angular-google-map-container{
+.angular-google-map-container {
     height: 100%;
     margin: 0;
     padding: 0;
 
-
 }
+
 .brouwerijcard {
     min-height: 148px;
 }
-#chatcontent{
+
+#chatcontent {
     height: 70%;
 
     overflow-y: scroll;
 
 }
-#send-message{
+
+#send-message {
     height: 20%;
 
 }
-#userlist{
-    height:90%;
+
+#userlist {
+    height: 90%;
 
 }
-.hidden{
+
+.hidden {
     visibility: hidden;
 }
-.controls{
+
+.controls {
     position: absolute;
     top: 70px;
-    left:10px;
+    left: 10px;
 }
-#infopanel{
+
+#infopanel {
     position: absolute;
 
-    right:5px;
+    right: 5px;
 
     top: 70px;
 
 }
-body{
+
+body {
     overflow: hidden;
     height: 100%;
 
-
 }
 
-#filterpanel{
-    position:absolute;
-    bottom:0%;
+#filterpanel {
+    position: absolute;
+    bottom: 0%;
 
-    padding:20px;
+    padding: 20px;
 }
-#addpanel{
-    position:absolute;
-    bottom:0%;
-    padding:20px;
+
+#addpanel {
+    position: absolute;
+    bottom: 0%;
+    padding: 20px;
 }
 
 

@@ -11,6 +11,6 @@ App.factory('socket', function (socketFactory) {
 });
 
 
-App.factory('userdata',['$http',function($http){
+App.factory('userdata', ['$http', function ($http) {
     return $http.get('/user');
 }]);

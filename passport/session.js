@@ -4,10 +4,10 @@
 var User = require('../data/models/user');
 var passport = require('passport');
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
     done(null, user);
 });
 
-passport.deserializeUser(function(user, done) {
+passport.deserializeUser(function (user, done) {
     done(null, user);
 });

@@ -1,144 +1,105 @@
-<html ng-app="App" manifest="/cache.manifest">
-<head >
-    <title>Beers-Map</title>
-
-    <link href="../css/materialize.css" type="text/css" rel="stylesheet">
-    <link href="../css/style.css" type="text/css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
-
-
-
-</head>
-<body ng-controller="breweryController">
-
-<nav ng-controller="userController" class="amber">
-    <div class="container">
-        <div class="nav-wrapper">
-            <a href="/" class="brand-logo"><img  src="../img/beerlogo_03.png"/></a>
-            <ul id="nav-mobile" class="right side-nav">
-                <li><a href="/">Map</a></li>
-                <li><a href="/chat">Chat</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a ng-if="!user" href="/login" >Log in</a></li>
-                <li><a ng-if="user" href="/logout" >Log out {{user.username}}</a></li>
-            </ul>
-            <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
-        </div>
-    </div>
-</nav>
+<html ng-app="App">
+    <head>
+        <title>Beers-Map</title>
+        <link href="../css/materialize.css" type="text/css" rel="stylesheet">
+        <link href="../css/style.css" type="text/css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
+    </head>
+    <body ng-controller="breweryController">
+        <nav ng-controller="userController" class="amber">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="/" class="brand-logo"><img src="../img/beerlogo_03.png"/></a>
+                    <ul id="nav-mobile" class="right side-nav">
+                        <li><a href="/">Map</a></li>
+                        <li><a href="/chat">Chat</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a ng-if="!user" href="/login">Log in</a></li>
+                        <li><a ng-if="user" href="/logout">Log out {{user.username}}</a></li>
+                    </ul>
+                    <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+                </div>
+            </div>
+        </nav>
         <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">
-            <ui-gmap-markers models="markers" idkey="'_id'"  coords="'self'" events="events" icon="'icon'">
-            </ui-gmap-markers>
+            <ui-gmap-markers models="markers" idkey="'_id'" coords="'self'" events="events" icon="'icon'"></ui-gmap-markers>
         </ui-gmap-google-map>
+        <div ng-if="selectedmarker" id="infopanel" class="card white ">
+            <div class="card-content  ">
+                <span class="card-title grey-text">{{selectedmarker.name}}</span>
 
-
-
-<div ng-if="selectedmarker" id="infopanel" class="card white ">
-    <div class="card-content  ">
-        <span class="card-title grey-text">{{selectedmarker.name}}</span>
-        <p>brewing since: {{selectedmarker.established}}</p>
-        <blockquote>
-        <div>{{selectedmarker.streetAddress}}</div>
-        <div>{{selectedmarker.locality}}</div>
-        </blockquote>
-    </div>
-    <div class="card-action">
-        <a ng-if="selectedmarker.website" href="{{selectedmarker.website}}">VISIT WEBSITE</a>
-        <a ng-click="close()" href='#'>CLOSE</a>
-    </div>
-</div>
-
-
-<div class="controls">
-    <a  ng-click="filterClicked()" class="btn-floating amber accent-4"><i class="mdi-action-history"></i></a>
-    <a ng-click="addClicked()" class="btn-floating amber accent-4"><i class="mdi-file-cloud-upload"></i></a>
-    </div>
-<div class="row">
-<div id="filterpanel" ng-if="filter" class="col s12 white">
-    <div class="row">
-        <div class="col s12">
-            <div>Go back in time, year: {{year}}</div>
-            <p class="range-field">
-            <input type="range" min="1100" ng-change="yearChanged()" ng-model="year" max="2015"/>
-            </p>
+                <p>brewing since: {{selectedmarker.established}}</p>
+                <blockquote>
+                    <div>{{selectedmarker.streetAddress}}</div>
+                    <div>{{selectedmarker.locality}}</div>
+                </blockquote>
+            </div>
+            <div class="card-action">
+                <a ng-if="selectedmarker.website" href="{{selectedmarker.website}}">VISIT WEBSITE</a>
+                <a ng-click="close()" href='#'>CLOSE</a>
+            </div>
         </div>
-    </div>
-</div>
-</div>
-<div class="row white ">
-<div id="Addpanel" ng-if="add" class="col s12 white">
-<form action="/brewery/add" method="get">
+        <div class="controls">
+            <a ng-click="filterClicked()" class="btn-floating amber accent-4"><i class="mdi-action-history"></i></a>
+            <a ng-click="addClicked()" class="btn-floating amber accent-4"><i class="mdi-file-cloud-upload"></i></a>
+        </div>
         <div class="row">
-            <div class="input-field col s6 l3 ">
-                <input id="name" type="text"  name="name" >
-                <label for="name">name of brewery</label>
+            <div id="filterpanel" ng-if="filter" class="col s12 white">
+                <div class="row">
+                    <div class="col s12">
+                        <div>Go back in time, year: {{year}}</div>
+                        <p class="range-field">
+                            <input type="range" min="1100" ng-change="yearChanged()" ng-model="year" max="2015"/>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="input-field col s6 l3 ">
-                <input id="established" type="text"  name="established" >
-                <label for="established">established in (year)</label>
-            </div>
-            <div class="input-field col s6 ">
-                <input id="website"  type="text" name="website" >
-                <label for="website">website</label>
-            </div>
-
-        <div class="input-field col l3 s6">
-        <input id="address"  type="text" name="streetAddress" >
-        <label for="address">address</label>
-            </div>
-            <div class="input-field col l3 s6">
-                <input id="locality"  type="text" name="locality" >
-                <label for="locality">city</label>
-            </div>
-            <div class="input-field col s3">
-                <input id="latitude"  type="text" name="latitude" >
-                <label for="latitude">latitude</label>
-            </div>
-        <div class="input-field col s3">
-            <input id="longitude"  type="text" name="longitude" >
-            <label for="longitude">longitude</label>
         </div>
-
-            <div class="col s6 offset-s3 l6 offset-l0">
-            <button class="btn waves-effect waves-light amber accent-4" type="submit" name="action">Submit
-                <i class="mdi-action-done right"></i>
-            </button>
+        <div class="row white ">
+            <div id="Addpanel" ng-if="add" class="col s12 white">
+                <form action="/brewery/add" method="get">
+                    <div class="row">
+                        <div class="input-field col s6 l3 ">
+                            <input id="name" type="text" name="name"> <label for="name">name of brewery</label>
+                        </div>
+                        <div class="input-field col s6 l3 ">
+                            <input id="established" type="text" name="established">
+                            <label for="established">established in (year)</label>
+                        </div>
+                        <div class="input-field col s6 ">
+                            <input id="website" type="text" name="website"> <label for="website">website</label>
+                        </div>
+                        <div class="input-field col l3 s6">
+                            <input id="address" type="text" name="streetAddress"> <label for="address">address</label>
+                        </div>
+                        <div class="input-field col l3 s6">
+                            <input id="locality" type="text" name="locality"> <label for="locality">city</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="latitude" type="text" name="latitude"> <label for="latitude">latitude</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="longitude" type="text" name="longitude"> <label for="longitude">longitude</label>
+                        </div>
+                        <div class="col s6 offset-s3 l6 offset-l0">
+                            <button class="btn waves-effect waves-light amber accent-4" type="submit" name="action">
+                                Submit <i class="mdi-action-done right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
-    </div>
-</form>
-
-</div>
-</div>
-
-
-<script  src="../js/lib/jquery.js"></script>
-<script src="../js/lib/angular.js"></script>
-<script src="../js/lib/lodash.js"></script>
-<script src="../js/lib/angular-google-maps.js"></script>
-<script src="../js/app.js"></script>
-<script src="../js/lib/socket.js"></script>
-<script src="../js/services.js"></script>
-<script src="../js/controllers/breweryController.js"></script>
-<script src="../js/controllers/userController.js"></script>
-
-
-
-<script type="text/javascript" src="../js/lib/materialize.js"></script>
-
-<script>
-
-    $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
-
-
-
-
-//TODO test schrijven yay
-//TODO maak offline deel
-//TODO maak DB-import script
-//TODO optimise JS + CSS
-
-
-
-</script>
-</body>
+        </div>
+        <script src="../js/lib/jquery.js"></script>
+        <script src="../js/lib/angular.js"></script>
+        <script src="../js/lib/lodash.js"></script>
+        <script src="../js/lib/angular-google-maps.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/lib/socket.js"></script>
+        <script src="../js/services.js"></script>
+        <script src="../js/controllers/breweryController.js"></script>
+        <script src="../js/controllers/userController.js"></script>
+        <script type="text/javascript" src="../js/lib/materialize.js"></script>
+        <script src="../js/menu.js"></script>
+    </body>
 </html>

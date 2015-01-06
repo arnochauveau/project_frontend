@@ -5,6 +5,6 @@
 var mongoose = require('mongoose');
 var brewerySchema = require('../schemas/brewery');
 
-var Brewery = mongoose.model('Brewery',brewerySchema);
+var Brewery = mongoose.model('Brewery', brewerySchema);
 
 module.exports = Brewery;

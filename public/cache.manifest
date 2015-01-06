@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#rev7
+#rev8
 
 
 ../js/lib/jquery.js
@@ -18,3 +18,6 @@ CACHE MANIFEST
 ../css/style.css
 ../font/roboto/Roboto-Regular.ttf
 ../font/roboto/Roboto-Light.ttf
+../font/material-design-icons/Material-Design-Icons.ttf?-g7cqhn
+../font/material-design-icons/Material-Design-Icons.woff?-g7cqhn
+

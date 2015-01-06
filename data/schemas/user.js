@@ -7,12 +7,12 @@ var bcrypt = require('bcrypt');
 var userSchema = mongoose.Schema({
     username: String,
     password: String,
-    accounts:[]
+    accounts: []
 
 });
 
-userSchema.methods.validPassword = function(password){
-    return bcrypt.compareSync(password,this.password);
+userSchema.methods.validPassword = function (password) {
+    return bcrypt.compareSync(password, this.password);
 };
 
 module.exports = userSchema;

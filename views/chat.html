@@ -1,74 +1,68 @@
-<html ng-app="App" manifest="/cache.manifest">
-<head>
-    <title>Beers-Chat</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../css/materialize.css" type="text/css" rel="stylesheet">
-    <link href="../css/style.css" type="text/css" rel="stylesheet">
-</head>
-<body ng-controller="userController">
-<nav  class="amber">
-    <div class="container">
-        <div class="nav-wrapper">
-            <a href="/" class="brand-logo"><img  src="../img/beerlogo_03.png"/></a>
-            <ul id="nav-mobile" class="right side-nav">
-                <li><a href="/">Map</a></li>
-                <li><a href="/chat">Chat</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a ng-if="!user" href="/login" >Log in</a></li>
-                <li><a ng-if="user" href="/logout" >Log out {{user.username}}</a></li>
-            </ul>
-            <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
-        </div>
-    </div>
-</nav>
-
-
-<div class="section white" ng-controller="chatController">
-    <div class="row container">
-        <div id="chatbox" class="col m9 s12">
-            <div id="chatcontent">
-                <div ng-repeat="msg in messages">
-                <strong>{{msg.nick}} :</strong> {{msg.msg}}
+<html ng-app="App">
+    <head>
+        <title>Beers-Chat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../css/materialize.css" type="text/css" rel="stylesheet">
+        <link href="../css/style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body ng-controller="userController">
+        <nav class="amber">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="/" class="brand-logo"><img src="../img/beerlogo_03.png"/></a>
+                    <ul id="nav-mobile" class="right side-nav">
+                        <li><a href="/">Map</a></li>
+                        <li><a href="/chat">Chat</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a ng-if="!user" href="/login">Log in</a></li>
+                        <li><a ng-if="user" href="/logout">Log out {{user.username}}</a></li>
+                    </ul>
+                    <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
                 </div>
             </div>
-
-            <form id="send-message" ng-if="loggedIn" >
-                <input  placeholder="type a message..." type="text" ng-model="$parent.message" ui-keypress="{'enter':'sendMessage()'}" />
-                <button class="btn waves-effect waves-light amber accent-4" ng-click="sendMessage()">SEND
-                    <i class="mdi-content-send right"></i>
-                </button>
-            </form>
-        </div>
-        <div id="userlist" class=" col m3 s0 hide-on-small-and-down" >
-            <div class="card-panel grey lighten-5 z-depth-1" ng-repeat="username in usernames">
-                <div class="row">
-                    <div class="col s2">
-                        <img src="img/user-placeholder.png" alt="placeholder" class="circle responsive-img"/>
+        </nav>
+        <div class="section white" ng-controller="chatController">
+            <div class="row container">
+                <div id="chatbox" class="col m9 s12">
+                    <div id="chatcontent">
+                        <div ng-repeat="msg in messages">
+                            <strong>{{msg.nick}} :</strong> {{msg.msg}}
+                        </div>
                     </div>
-                    <div class="col s10">
+                    <form id="send-message" ng-if="loggedIn">
+                        <input placeholder="type a message..." type="text" ng-model="$parent.message" ui-keypress="{'enter':'sendMessage()'}"/>
+                        <button class="btn waves-effect waves-light amber accent-4" ng-click="sendMessage()">SEND
+                            <i class="mdi-content-send right"></i>
+                        </button>
+                    </form>
+                </div>
+                <div id="userlist" class=" col m3 s0 hide-on-small-and-down">
+                    <div class="card-panel grey lighten-5 z-depth-1" ng-repeat="username in usernames">
+                        <div class="row">
+                            <div class="col s2">
+                                <img src="img/user-placeholder.png" alt="placeholder" class="circle responsive-img"/>
+                            </div>
+                            <div class="col s10">
                          <span class="black-text">
                             {{username}}
                             </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-
-<script  src="../js/lib/jquery.js"></script><script src="../js/lib/materialize.js"></script>
-<script src="../js/lib/angular.js"></script>
-<script src="../js/lib/lodash.js"></script>
-<script src="../js/lib/angular-google-maps.js"></script>
-<script src="/socket.io/socket.io.js"></script>
-<script src="../js/lib/socket.js"></script>
-<script src="../js/app.js"></script>
-
-<script src="../js/services.js"></script>
-<script src="../js/controllers/userController.js"></script>
-<script src="../js/controllers/chatController.js"></script>
-
-
-</body>
+        <script src="../js/lib/jquery.js"></script>
+        <script src="../js/lib/materialize.js"></script>
+        <script src="../js/lib/angular.js"></script>
+        <script src="../js/lib/lodash.js"></script>
+        <script src="../js/lib/angular-google-maps.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="../js/lib/socket.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/services.js"></script>
+        <script src="../js/controllers/userController.js"></script>
+        <script src="../js/controllers/chatController.js"></script>
+        <script src="../js/menu.js"></script>
+    </body>
 </html>

@@ -9,9 +9,9 @@ var brewerySchema = mongoose.Schema({
     website: String,
     streetAddress: String,
     locality: String,
-    established:String,
+    established: String,
     latitude: Number,
     longitude: Number
 });
 
-module.exports= brewerySchema;
+module.exports = brewerySchema;
