@@ -23,7 +23,7 @@ require('./data/connectDB');
 
 
 //start listening
-http.listen(80, function () {
+http.listen(process.env.PORT||80, function () {
     var host = "localhost";
     var port = "80";
 

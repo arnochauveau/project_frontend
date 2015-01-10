@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 
 module.exports = (function () {
 
-    var mongodbURL = 'mongodb://localhost/bier';
+    var mongodbURL = 'mongodb://bierenapp:bierenapp@ds056727.mongolab.com:56727/bieren';
     var db = mongoose.connect(mongodbURL);
 
     mongoose.connection.on('error', function (err) {
