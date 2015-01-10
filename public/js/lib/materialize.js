@@ -738,11 +738,11 @@ jQuery.extend( jQuery.easing,
       var margin = 5;
       
       // Create tooltip
-      var newTooltip = $('<div></div');
+      var newTooltip = $('<div></div>');
       newTooltip.addClass('material-tooltip').text(origin.attr('data-tooltip'));
       newTooltip.appendTo($('body'));
       
-      var backdrop = $('<div></div').addClass('backdrop');
+      var backdrop = $('<div></div>').addClass('backdrop');
       backdrop.appendTo(newTooltip);
       backdrop.css({ top: 0,
                     left:0,
@@ -756,7 +756,7 @@ jQuery.extend( jQuery.easing,
         counterInterval = setInterval(function(){
           counter += 50;
           if (counter >= defaults.delay && started == false) {
-            started = true
+            started = true;
             newTooltip.css({ display: 'block' });
 
             //    Bottom Position

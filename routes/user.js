@@ -48,7 +48,7 @@ exports.CurrentUser = function (req, res) {
         res.send(req.user);
     else
         res.send(false);
-}
+};
 
 exports.fbcb = function (req, res, next) {
     passport.authenticate('facebook', {successRedirect: '/', failureRedirect: '/login'})(req, res, next);
