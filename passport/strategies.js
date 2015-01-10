@@ -27,7 +27,7 @@ passport.use(new localStrategy(
 passport.use(new FacebookStrategy({
         clientID: '765665256804176',
         clientSecret: '28ead6aca3eca4da165de5bc1ae3575d',
-        callbackURL: "http://localhost/login/facebook/callback"
+        callbackURL: "http://http://bierenapp.azurewebsites.net/login/facebook/callback"
     },
     function (accessToken, refreshToken, profile, done) {
         // To keep the example simple, the user's Facebook profile is returned to
