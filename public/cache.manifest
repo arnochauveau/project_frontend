@@ -7,7 +7,7 @@ CACHE MANIFEST
 ../js/lib/lodash.js
 ../js/lib/angular-google-maps.js
 ../js/lib/socket.js
-../js/app.js
+../js/script.js
 ../js/services.js
 ../js/controllers/userController.js
 ../js/controllers/breweryController.js
